@@ -11,44 +11,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body class="page">
-  <div class="page__gradient"></div>
-  <header class="hero__header">
-    <div class="hero__inner">
-      <div class="brand-wrap">
-  <a href="#hero" class="brand-logo-link" aria-label="Jerusha Lamsal home">
-    <svg class="brand-logo" viewBox="0 0 120 120" role="img" aria-labelledby="brandTitle brandDesc">
-      <title id="brandTitle">Jerusha Lamsal monogram logo</title>
-      <desc id="brandDesc">Stylized JL monogram inside a rounded square with orbit accents</desc>
-      <defs>
-        <linearGradient id="jlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#6366f1"></stop>
-          <stop offset="100%" stop-color="#a855f7"></stop>
-        </linearGradient>
-      </defs>
+ <div class="page__gradient"></div>
+<canvas id="constellation" class="constellation-canvas" aria-hidden="true"></canvas>
 
-      <rect x="8" y="8" width="104" height="104" rx="26" fill="url(#jlGrad)"></rect>
-      <circle cx="96" cy="24" r="6" fill="#e2e8f0" opacity="0.9"></circle>
-      <circle cx="24" cy="96" r="4" fill="#e2e8f0" opacity="0.75"></circle>
-
-      <path d="M38 35v36c0 9-6 15-15 15" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
-      <path d="M54 35v50h34" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-  </a>
-
-  <div class="brand-text">
-    <p class="mono uppercase">Jerusha Lamsal</p>
-    <p class="hero__tag">Software Engineer | Data Analytics Enthusiast | QA & Intelligent Systems</p>
-  </div>
-</div>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode">🌙</button>
+<header class="hero__header">
+  <div class="hero__inner nav-shell">
+    <div class="brand-wrap">
+      <a href="#hero" class="brand-logo-link" aria-label="Jerusha Lamsal home">
+        <svg class="brand-logo" viewBox="0 0 120 120" role="img" aria-label="JL logo">
+          <defs>
+            <linearGradient id="jlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6366f1"></stop>
+              <stop offset="100%" stop-color="#a855f7"></stop>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="104" height="104" rx="26" fill="url(#jlGrad)"></rect>
+          <path d="M38 35v36c0 9-6 15-15 15" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M54 35v50h34" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <div class="brand-text">
+        <p class="mono uppercase">Jerusha Lamsal</p>
+      </div>
     </div>
-  </header>
+
+    <nav id="mainNav" class="main-nav" aria-label="Primary">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+      <a href="#resume" class="nav-cta">Resume</a>
+    </nav>
+
+   <div class="nav-actions">
+  <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" aria-pressed="false">🌙</button>
+</div>
+  </div>
+</header>
 
   <main>
    <section id="hero" class="panel panel--hero">
   <div class="hero-layout">
     <div class="hero-content">
-      <p class="caps accent">Pokhara • +977-9813774974 • <a href="mailto:lamsaljerusha@gmail.com">lamsaljerusha@gmail.com</a></p>
+      <p class="caps accent">Pokhara • +977-98******** • <a href="mailto:lamsaljerusha@gmail.com">lamsaljerusha@gmail.com</a></p>
       <h1>Crafting reliable, data-driven systems that surface insight and trust for every stakeholder.</h1>
       <p class="lede">
         I am a Bachelor of Information Technology student at Gandaki University specializing in intelligent systems, QA,
@@ -120,32 +129,53 @@
       </div>
     </section>
 
-    <section id="projects" class="panel panel--projects">
-      <p class="caps accent">Projects</p>
-      <h2>Full-stack and AI-driven experiences.</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Event Management System</h3>
-          <p>Role-based platform with Admin, Organizer, and Attendee flows.</p>
-          <p class="meta">Tech: HTML • CSS • JavaScript • PHP • MySQL</p>
-        </article>
-        <article class="project-card">
-          <h3>Facial Recognition Attendance</h3>
-          <p>AI-powered attendance logging for classrooms.</p>
-          <p class="meta">Tech: Python • OpenCV • ML • SQLite</p>
-        </article>
-        <article class="project-card">
-          <h3>Attendance Management System</h3>
-          <p>Automated reporting and validation engine.</p>
-          <p class="meta">Tech: Java • JDBC • MySQL</p>
-        </article>
-        <article class="project-card">
-          <h3>Food Ordering Management System</h3>
-          <p>Online cafeteria order pipeline with role-driven access.</p>
-          <p class="meta">Tech: PHP • MySQL • HTML • CSS • JavaScript</p>
-        </article>
+   <section id="projects" class="panel panel--projects">
+  <p class="caps accent">Projects</p>
+  <h2>Product-minded systems with measurable outcomes.</h2>
+  <p class="lede">Each build emphasizes reliability, user flow clarity, and data-informed decisions.</p>
+
+  <div class="project-grid">
+    <article class="project-card project-card--featured">
+      <div class="project-media">
+        <img src="./assets/images/ems.png" alt="Event Management System dashboard screenshot" loading="lazy" />
       </div>
-    </section>
+      <h3>Event Management System</h3>
+      <p>Role-based platform for Admin, Organizer, and Attendee workflows.</p>
+      <p class="meta">HTML • CSS • JavaScript • PHP • MySQL</p>
+      <ul class="project-points">
+        <li>Improved event operations with structured role access and validation flows.</li>
+        <li>Reduced workflow friction through clear user journeys and tested interfaces.</li>
+      </ul>
+    </article>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="./assets/images/facial.jpg" alt="Facial recognition attendance interface" loading="lazy" />
+      </div>
+      <h3>Facial Recognition Attendance</h3>
+      <p>AI attendance automation using OpenCV and machine learning.</p>
+      <p class="meta">Python • OpenCV • ML • SQLite</p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="./assets/images/attendance.jpg" alt="Attendance management reporting page" loading="lazy" />
+      </div>
+      <h3>Attendance Management System</h3>
+      <p>Academic reporting and attendance tracking engine.</p>
+      <p class="meta">Java • JDBC • MySQL</p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="./assets/images/food.jpg" alt="Food ordering management interface" loading="lazy" />
+      </div>
+      <h3>Food Ordering Management System</h3>
+      <p>Campus cafeteria ordering and fulfillment management.</p>
+      <p class="meta">PHP • MySQL • HTML • CSS • JavaScript</p>
+    </article>
+  </div>
+</section>
 
     <section id="experience" class="panel panel--card">
       <p class="caps accent">Experience</p>
@@ -199,7 +229,7 @@
         <p class="caps accent">Contact</p>
         <h2>Let’s build something reliable together.</h2>
         <p>Email: <a href="mailto:lamsaljerusha@gmail.com">lamsaljerusha@gmail.com</a></p>
-        <p>Phone: +977-9813774974</p>
+        <p>Phone: +977-98********</p>
       </div>
       <form action="/api/contact" method="POST" class="contact-form">
         <label>
@@ -229,7 +259,7 @@
   </main>
 
   <footer class="footer">
-    <p>© 2025 Jerusha Lamsal — Pokhara, Nepal</p>
+    <p>© 2026 Jerusha Lamsal — Pokhara, Nepal</p>
     <p>Built with HTML, Tailwind-inspired CSS, and Vanilla JS</p>
   </footer>
 
